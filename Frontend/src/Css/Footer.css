@@ -1,0 +1,31 @@
+.footer {
+    max-width: 1000px;
+    width: 100%;
+    border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+    margin: 0 auto;
+    align-items: center;
+    min-height: 100vh
+    
+}
+
+.copyright {
+    justify-content: center !important;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+     max-width: 100%;
+    width: 100%;
+    height: 92px;
+    border-bottom: black solid 1px;
+    margin: 0 auto;
+    display: flex;
+    background-color: #FFB84D;
+    color: #000;
+}
+
+.copyright .copyright-blog {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0px;
+}
