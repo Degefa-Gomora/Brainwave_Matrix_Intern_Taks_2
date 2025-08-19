@@ -213,7 +213,7 @@ li.story-readtime {
     width: 1000px;
     margin: 0 auto;
     padding: 20px 8px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     background-color: #fbfdff;
 }

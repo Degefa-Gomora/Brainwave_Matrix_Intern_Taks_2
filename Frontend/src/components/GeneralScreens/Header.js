@@ -55,7 +55,7 @@ const Header = () => {
                             <Link to="/readList" className='readList-link'>
                                 <BsBookmarks />
                                 <span id="readListLength">
-                                    {activeUser.readListLength}
+                                    {activeUser?.readListLength}
                                 </span>
                             </Link>
                             <div className='header-profile-wrapper '>
@@ -65,7 +65,7 @@ const Header = () => {
 
                                     :
 
-                                    <img src={`/userPhotos/${activeUser.photo}`} alt={activeUser.username} />
+                                    <img src={`/userPhotos/${activeUser?.photo}`} alt={activeUser.username} />
 
                                 }
 

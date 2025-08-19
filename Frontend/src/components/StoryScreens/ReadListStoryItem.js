@@ -3,6 +3,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { BsThreeDots, BsBookmarkFill } from 'react-icons/bs'
 
 const ReadListStoryItem = ({ story, editDate }) => {
+    console.log("Story:", story);
 
     const truncateContent = (content) => {
         const trimmedString = content.substr(0, 130);
@@ -17,7 +18,7 @@ const ReadListStoryItem = ({ story, editDate }) => {
                 <div className="story-top-block">
                     <div className="readList-story-author">
 
-                        {story.author.username}
+                        {story?.author?.username}
 
                     </div>
                     <span>-</span>
@@ -32,20 +33,20 @@ const ReadListStoryItem = ({ story, editDate }) => {
 
                 <div className="story-med-block">
                     <div className="readList-story-title">
-                        <a href={`story/${story.slug}`}>
-                            {story.title}
+                        <a href={`story/${story?.slug}`}>
+                            {story?.title}
                         </a>
                     </div>
                     <div className="readList-story-content">
 
-                        <span dangerouslySetInnerHTML={{ __html: truncateContent(story.content) + "..." }}></span>
+                        <span dangerouslySetInnerHTML={{ __html: truncateContent(story?.content) + "..." }}></span>
 
                     </div>
 
                 </div>
 
                 <div className="story-bottom-block">
-                    <a href={`story/${story.slug}`}>
+                    <a href={`story/${story?.slug}`}>
                         <span>
                             Read More
                         </span>
@@ -53,7 +54,7 @@ const ReadListStoryItem = ({ story, editDate }) => {
                             -
                         </span>
                         <span>
-                            {story.readtime} min read
+                            {story?.readtime} min read
                         </span>
                     </a>
 
@@ -72,7 +73,7 @@ const ReadListStoryItem = ({ story, editDate }) => {
 
             <section>
                 <div className="story-Image-Wrap">
-                    <img src={`/storyImages/${story.image}`} alt={story.title} width="180px" />
+                    <img src={`/storyImages/${story?.image}`} alt={story?.title} width="180px" />
                 </div>
 
             </section>

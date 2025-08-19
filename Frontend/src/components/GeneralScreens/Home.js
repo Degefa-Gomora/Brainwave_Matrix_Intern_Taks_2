@@ -77,7 +77,7 @@ const Home = () => {
         <div>
           <div className="story-card-wrapper">
             {stories.length !== 0 ?
-              stories.map((story) => {
+              stories?.map((story) => {
                 return (
                   <CardStory key={uuidv4()} story={story} />
                 )
