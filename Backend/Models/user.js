@@ -22,12 +22,23 @@ const UserSchema = new mongoose.Schema({
         unique : true ,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
-    password : {
-        type:String,
-        minlength: [6, "Please provide a password with min length : 6 "],
-        required: [true, "Please provide a password"],
-        select: false
-    },
+    // password : {
+    //     type:String,
+    //     minlength: [8, "Please provide a password with min length : 6 "],
+    //     required: [true, "Please provide a password"],
+    //     select: false
+    // },
+
+    password: {
+    type: String,
+    required: [true, "Please provide a password"],
+    minlength: [8, "Password must be at least 8 characters long"],
+    match: [
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/,
+        "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+    ],
+    select: false
+},
     role: {
         type: String,
         default: "user",
