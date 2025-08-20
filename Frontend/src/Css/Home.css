@@ -25,6 +25,39 @@
     opacity: 0.8;
 }
 
+.bg-planet-svg {
+    position: absolute;
+    top: 250px;
+    right: -205px;
+    z-index: -5; /* Keep it in the background */
+    width: 250px; /* Reduced width */
+    opacity: 0.5; /* Reduced opacity for more faded look */
+    transform: scale(0.6); /* Scaled down to 60% of original size */
+    filter: blur(1.5px); /* Added a subtle blur */
+}
+
+.bg-planet2-svg {
+    position: absolute;
+    bottom: -125px;
+    left: -180px;
+    z-index: -5;
+    width: 300px; /* Adjusted width */
+    opacity: 0.6; /* Adjusted opacity */
+    transform: scale(0.7); /* Scaled down */
+    filter: blur(2px); /* Added blur */
+}
+
+.bg-planet3-svg {
+    position: absolute;
+    top: -65px;
+    left: -170px;
+    z-index: -5;
+    width: 200px; /* Smaller width for maximum distance */
+    opacity: 0.4; /* Very low opacity for a distant, hazy appearance */
+    transform: scale(0.5); /* Scaled down significantly */
+    filter: blur(3px); /* Stronger blur for a more distant effect */
+}
+
 .story-card-wrapper {
     position: relative;
     min-height: 850px;
@@ -119,6 +152,3 @@
     color: rgb(48, 47, 47);
 }
 
-.Inclusive-home-page{
-    background-color: white;
-}

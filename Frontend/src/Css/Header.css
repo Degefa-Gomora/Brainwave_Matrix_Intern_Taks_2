@@ -11,20 +11,19 @@ header .averager {
     max-width: 100%;
     width: 100%;
     height: 92px;
-    border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+    border-bottom: goldenrod solid 5px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* background-color: #FFFDD0; */
-    background-color: #FFB84D;
+    background-color: #1A1A1A;
 }
 
 header .logo {
     text-decoration: none;
-    color: black;
+    color: white;
     font-family: 'Staatliches', cursive;
-    /* color: #0063a5; */
 }
 
 header .logo h5 {
@@ -33,7 +32,7 @@ header .logo h5 {
     letter-spacing: 0.7px;
     margin-top: 3px;
     margin-left: 10px;
-    color: black;
+    color: white;
 
 }
 
@@ -49,12 +48,12 @@ header .logo h5 {
     font-weight: bold;
     font-family: 'Saira Condensed', sans-serif;
     font-size: 1.2rem;
-    color: black;
+    color: whitesmoke;
 }
 
 .addStory-link {
-    color: black !important;
-    border: black solid 2px;
+    color: whitesmoke !important;
+    border: goldenrod solid 5px;
     padding: 4px 10px !important;
     margin-right: 2rem;
     border-radius: 4px;
@@ -62,16 +61,16 @@ header .logo h5 {
 }
 
 .register-link {
-    border: black solid 2px;
+    color: whitesmoke !important;
+    border: goldenrod solid 5px;
     border-radius: 4px;
-    color:black !important;
     margin-right: 5px;
 }
 
 .login-link{
-    border: black solid 2px;
+    border: goldenrod solid 5px;
     border-radius: 4px;
-    color: black !important;
+    color: whitesmoke !important;
     margin-right: 10px;
 }
 
@@ -80,10 +79,13 @@ header .logo h5 {
     width: 450px;
     position: relative;
     height: 100%;
+   
     display: flex;
     align-items: center;
-    color: black;
-}
+    color: whitesmoke !important;
+    }
+
+    
 
 @media only screen and (max-width: 1030px) {
     header .averager {
@@ -103,6 +105,7 @@ header .logo h5 {
     border: none;
     padding-left: 0.9rem;
     background-color: rgba(105, 113, 116, 0.1);
+    color:#fff;
 }
 
 .search-form button {
