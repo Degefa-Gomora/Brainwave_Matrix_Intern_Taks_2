@@ -142,7 +142,7 @@
 
 .story-card .story-text,
 .story-card .story-text * {
-    color: rgb(92, 92, 92);
+    color: darkblue;
     font-size: 1rem;
     font-weight: normal;
 }

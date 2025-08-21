@@ -99,7 +99,8 @@
     height: auto;
     margin-top: 14px;
     text-align: center;
-    color: #A0A0A0;
+    color: wheat;
+    /* background-color: #fff; */
 }
 
 .StoryImageField [type="file"] {

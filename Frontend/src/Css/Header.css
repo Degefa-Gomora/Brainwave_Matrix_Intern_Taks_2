@@ -1,17 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab:wght@800&display=swap&family=Roboto+Slab:wght@800&family=Saira+Condensed:wght@500&family=Staatliches&display=swap');
 
 header {
+  margin: 0;
+  padding: 0;
+  display: block; /* Ensures header behaves as a block element */
+  position: relative;
+}
+
+/* header {
     width: 100%;
     height: 95px;
     position: relative;
     color: white;
+ 
+} */
+
+.header * {
+  margin: 0;
+  padding: 0;
 }
 
 header .averager {
     max-width: 100%;
     width: 100%;
     height: 92px;
-    border-bottom: goldenrod solid 5px;
+    /* border-bottom: goldenrod solid 5px; */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

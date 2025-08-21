@@ -148,6 +148,8 @@ import ChangePassword from "./components/ProfileScreens/ChangePassword";
 import NotFound from "./components/GeneralScreens/NotFound";
 import EditStory from "./components/StoryScreens/EditStory";
 import ReadListPage from "./components/ProfileScreens/ReadListPage";
+import "../src/Css/Layout.css";
+import ImageBanner from "./components/GeneralScreens/ImageBanner";
 import "../src/Css/Theme.css"; 
 
 
@@ -191,6 +193,7 @@ const LayoutsWithHeader = () => {
   return (
     <>
       <Header />
+      <ImageBanner videoSrc="/images/vid.mp4"/>
       <Outlet />
       <Footer />
     </>
