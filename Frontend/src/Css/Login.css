@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F9F9F9;
+    background-color: var(--bg-color); 
 }
 
 .login-big-wrapper {
@@ -13,19 +13,14 @@
     max-width: 1100px;
     height: 90%;
     border-radius: 9px;
-    background-color: white;
+    background-color: var(--card-bg); 
     display: flex;
     justify-content: space-between;
     position: relative;
 }
 
-.section-wrapper {
-    width: 50%;
-    padding: 2.6rem 4rem;
-}
-
 .login-banner-section {
-    background-color: #F9F9F9;
+    background-color: var(--secondary-bg); 
     border-radius: 0 9px 9px 0;
     width: 50%;
     display: flex;
@@ -33,85 +28,17 @@
     align-items: center;
 }
 
-.top-suggest_register {
-    font-size: 0.8rem;
-}
+.login-banner-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 9px 9px 0;
 
-.top-suggest_register span {
-    color: purple;
-    margin-right: 8px;
-    font-size: 1rem;
-}
-
-@media only screen and (max-width: 860px) {
-    .login-banner-section {
-        display: none;
-    }
-    .section-wrapper {
-        max-width: 580px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 1.7rem 10vw;
-    }
-    .login-big-wrapper {
-        width: 80%;
-        padding: 2.2rem 0;
-    }
-}
-
-.top-suggest_register {
-    font-size: 0.8rem;
-}
-
-.top-suggest_register span {
-    color: #ABB8c5;
-    margin-right: 8px;
-}
-
-.top-suggest_register a {
-    font-size: 0.7rem;
-    color: rgb(13, 16, 163);
-    text-decoration: none;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-}
-
-.top-login-explain {
-    margin-top: 4vw;
-}
-
-.top-login-explain h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    margin-bottom: 1.4rem;
-    font-size: 2.4rem;
-    font-family: 'Signika Negative', sans-serif;
-}
-
-.top-login-explain p {
-    color: #afafaf;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-}
-
-.login-big-wrapper form {
-    position: relative;
-    padding-top: 1.3rem;
 }
 
 .login-big-wrapper form label {
-    position: absolute;
-    top: -10px;
-    left: 14px;
-    font-size: 0.8rem;
-    font-family: 'Inter', sans-serif;
-    background-color: white;
-    color: #646464;
-    padding: 0 6px;
-}
-
-.login-big-wrapper form .input-wrapper {
-    position: relative;
+    background-color: var(--card-bg); /* changed */
+    color: var(--input-text); /* changed */
 }
 
 .login-big-wrapper form input {
@@ -120,37 +47,26 @@
     margin-bottom: 1.9rem;
     padding: 18px;
     padding-top: 22px;
-    border: #dadcdd solid 1px;
+    border: var(--input-border) solid 1px; /* changed */
     border-radius: 5px;
     font-size: 0.9rem;
-    color: #646464;
+    color: var(--input-text); /* changed */
+    background-color: var(--input-bg); /* changed */
 }
 
 .login-big-wrapper form input:focus-within {
-    border: #0205b1 solid 1px;
+    border: var(--primary-color) solid 1px; /* changed */
 }
 
 .login-big-wrapper form input:focus+label {
-    color: #0205b1 !important;
-}
-
-.login-screen__forgotpassword {
-    float: right;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    margin-top: -13px;
-    color: rgb(13, 16, 163);
-    font-weight: 600;
-    cursor: pointer;
-    padding: 3px 6px;
+    color: var(--primary-color) !important; /* changed */
 }
 
 .login-big-wrapper form button {
     cursor: pointer;
     border: none;
     outline: 0;
-    background-color: #0205b1;
+    background-color: var(--primary-color); /* changed */
     width: 100%;
     text-align: center;
     color: white;
@@ -165,7 +81,7 @@
     border-radius: 8px;
     margin-bottom: 1.5rem;
     margin-top: -1.2rem;
-    background-color: rgba(245, 72, 72, 0.9);
+    background-color: var(--error-bg); /* changed */
     color: white;
     padding: 8px;
     font-size: 0.9rem;
