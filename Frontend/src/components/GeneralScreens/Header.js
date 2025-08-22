@@ -1,13 +1,16 @@
+
+
 // import React, { useState, useEffect, useContext } from "react";
 // import { Link, useNavigate } from "react-router-dom";
 // import SearchForm from "./SearchForm";
 // import "../../Css/Header.css";
 // import { RiPencilFill } from "react-icons/ri";
 // import { FaUserEdit } from "react-icons/fa";
-// import { BiLogOut } from "react-icons/bi";
+// import { BiBorderAll, BiLogOut } from "react-icons/bi";
 // import { BsBookmarks } from "react-icons/bs";
 // import SkeletonElement from "../Skeletons/SkeletonElement";
 // import { AuthContext } from "../../Context/AuthContext";
+// import ThemeSelector from "./ThemeSelector";
 
 // const Header = () => {
 //   const bool = localStorage.getItem("authToken") ? true : false;
@@ -30,25 +33,34 @@
 
 //   return (
 //     <header>
+//       {" "}
 //       <div className="averager">
+//         {" "}
 //         <Link to="/" className="logo">
-//           <h5>Eblogs</h5>
+//           <h5>Eblogs</h5>{" "}
 //         </Link>
-//         <SearchForm text="Search..." style={{ color: "white" }} />
+//         <SearchForm text="Search..." style={{ color: "white", size: "small", border: "goldenrod solid 5px" }} />{" "}
+//         <ThemeSelector />
 //         <div className="header_options">
+//           {" "}
 //           {auth ? (
 //             <div className="auth_options">
+//               {/* {" "}
+//               {activeUser?.role === "admin" && ( // Place ThemeSelector here to be near Create Post
+//                 <ThemeSelector />
+//               )}
+//               {" "} */}
 //               {activeUser?.role === "admin" && (
 //                 <Link className="addStory-link" to="/addstory">
 //                   <RiPencilFill /> Create Post{" "}
 //                 </Link>
-//               )}
-
+//               )}{" "}
 //               <Link to="/readList" className="readList-link">
-//                 <BsBookmarks />
-//                 <span id="readListLength">{activeUser?.readListLength}</span>
-//               </Link>
+//                 <BsBookmarks />{" "}
+//                 <span id="readListLength">{activeUser?.readListLength}</span>{" "}
+//               </Link>{" "}
 //               <div className="header-profile-wrapper ">
+//                 {" "}
 //                 {loading ? (
 //                   <SkeletonElement type="minsize-avatar" />
 //                 ) : (
@@ -56,41 +68,38 @@
 //                     src={`/userPhotos/${activeUser?.photo}`}
 //                     alt={activeUser.username}
 //                   />
-//                 )}
-
-//                 <div className="sub-profile-wrap  ">
+//                 )}{" "}
+//                 <div className="sub-profile-wrap ">
+//                   {" "}
 //                   <Link className="profile-link" to="/profile">
-//                     {" "}
 //                     <FaUserEdit /> Profile{" "}
-//                   </Link>
-
+//                   </Link>{" "}
 //                   <button className="logout-btn" onClick={handleLogout}>
-//                     {" "}
-//                     <BiLogOut /> Logout
-//                   </button>
-//                 </div>
-//               </div>
+//                     <BiLogOut /> Logout{" "}
+//                   </button>{" "}
+//                 </div>{" "}
+//               </div>{" "}
 //             </div>
 //           ) : (
 //             <div className="noAuth_options">
+//               {" "}
 //               <Link className="login-link" to="/login">
-//                 {" "}
 //                 Login{" "}
-//               </Link>
-
+//               </Link>{" "}
 //               <Link className="register-link" to="/register">
-//                 {" "}
-//                 Register
-//               </Link>
+//                 Register{" "}
+//               </Link>{" "}
 //             </div>
-//           )}
-//         </div>
-//       </div>
+//           )}{" "}
+//         </div>{" "}
+//       </div>{" "}
 //     </header>
 //   );
 // };
 
 // export default Header;
+
+
 
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -98,7 +107,7 @@ import SearchForm from "./SearchForm";
 import "../../Css/Header.css";
 import { RiPencilFill } from "react-icons/ri";
 import { FaUserEdit } from "react-icons/fa";
-import { BiBorderAll, BiLogOut } from "react-icons/bi";
+import { BiLogOut } from "react-icons/bi";
 import { BsBookmarks } from "react-icons/bs";
 import SkeletonElement from "../Skeletons/SkeletonElement";
 import { AuthContext } from "../../Context/AuthContext";
@@ -125,66 +134,68 @@ const Header = () => {
 
   return (
     <header>
-      {" "}
       <div className="averager">
-        {" "}
         <Link to="/" className="logo">
-          <h5>Eblogs</h5>{" "}
+          <h5>Eblogs</h5>
         </Link>
-        <SearchForm text="Search..." style={{ color: "white", size: "small", border: "goldenrod solid 5px" }} />{" "}
+
+        <SearchForm
+          text="Search..."
+          style={{
+            color: "white",
+            size: "small",
+            border: "goldenrod solid 5px",
+          }}
+        />
+
         <ThemeSelector />
+
         <div className="header_options">
-          {" "}
           {auth ? (
             <div className="auth_options">
-              {/* {" "}
-              {activeUser?.role === "admin" && ( // Place ThemeSelector here to be near Create Post
-                <ThemeSelector />
-              )}
-              {" "} */}
               {activeUser?.role === "admin" && (
                 <Link className="addStory-link" to="/addstory">
-                  <RiPencilFill /> Create Post{" "}
+                  <RiPencilFill /> Create Post
                 </Link>
-              )}{" "}
+              )}
+
               <Link to="/readList" className="readList-link">
-                <BsBookmarks />{" "}
-                <span id="readListLength">{activeUser?.readListLength}</span>{" "}
-              </Link>{" "}
-              <div className="header-profile-wrapper ">
-                {" "}
+                <BsBookmarks />
+                <span id="readListLength">{activeUser?.readListLength}</span>
+              </Link>
+
+              <div className="header-profile-wrapper">
                 {loading ? (
                   <SkeletonElement type="minsize-avatar" />
                 ) : (
                   <img
-                    src={`/userPhotos/${activeUser?.photo}`}
-                    alt={activeUser.username}
+                    src={`${process.env.REACT_APP_API_URL}/userPhotos/${activeUser?.photo}`}
+                    alt={activeUser?.username}
                   />
-                )}{" "}
-                <div className="sub-profile-wrap ">
-                  {" "}
+                )}
+
+                <div className="sub-profile-wrap">
                   <Link className="profile-link" to="/profile">
-                    <FaUserEdit /> Profile{" "}
-                  </Link>{" "}
+                    <FaUserEdit /> Profile
+                  </Link>
                   <button className="logout-btn" onClick={handleLogout}>
-                    <BiLogOut /> Logout{" "}
-                  </button>{" "}
-                </div>{" "}
-              </div>{" "}
+                    <BiLogOut /> Logout
+                  </button>
+                </div>
+              </div>
             </div>
           ) : (
             <div className="noAuth_options">
-              {" "}
               <Link className="login-link" to="/login">
-                Login{" "}
-              </Link>{" "}
+                Login
+              </Link>
               <Link className="register-link" to="/register">
-                Register{" "}
-              </Link>{" "}
+                Register
+              </Link>
             </div>
-          )}{" "}
-        </div>{" "}
-      </div>{" "}
+          )}
+        </div>
+      </div>
     </header>
   );
 };

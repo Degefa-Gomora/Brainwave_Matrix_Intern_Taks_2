@@ -2,82 +2,82 @@
 
 
 
-// import React, { useState, useEffect, useRef } from "react";
-// import "../../Css/ImageBanner.css";
+// // import React, { useState, useEffect, useRef } from "react";
+// // import "../../Css/ImageBanner.css";
 
-// const totalImages = 50;
+// // const totalImages = 50;
 
-// const ImageBanner = () => {
-//   const [isHovering, setIsHovering] = useState(false);
-//   const [currentImageIndex, setCurrentImageIndex] = useState(1);
-//   const intervalRef = useRef(null);
+// // const ImageBanner = () => {
+// //   const [isHovering, setIsHovering] = useState(false);
+// //   const [currentImageIndex, setCurrentImageIndex] = useState(1);
+// //   const intervalRef = useRef(null);
 
-//   // Use a state to track whether images have been preloaded
-//   const [imagesLoaded, setImagesLoaded] = useState(false);
+// //   // Use a state to track whether images have been preloaded
+// //   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-//   // Effect to preload all images
-//   useEffect(() => {
-//     const loadImage = (index) => {
-//       return new Promise((resolve) => {
-//         const paddedIndex = String(index).padStart(5, "0");
-//         const img = new Image();
-//         img.src = `/images/${paddedIndex}.png`;
-//         img.onload = () => resolve();
-//       });
-//     };
+// //   // Effect to preload all images
+// //   useEffect(() => {
+// //     const loadImage = (index) => {
+// //       return new Promise((resolve) => {
+// //         const paddedIndex = String(index).padStart(5, "0");
+// //         const img = new Image();
+// //         img.src = `/images/${paddedIndex}.png`;
+// //         img.onload = () => resolve();
+// //       });
+// //     };
 
-//     const loadAllImages = async () => {
-//       const promises = [];
-//       for (let i = 1; i <= totalImages; i++) {
-//         promises.push(loadImage(i));
-//       }
-//       await Promise.all(promises);
-//       setImagesLoaded(true); // Set state to true once all images are loaded
-//       console.log("All banner images have been preloaded!");
-//     };
+// //     const loadAllImages = async () => {
+// //       const promises = [];
+// //       for (let i = 1; i <= totalImages; i++) {
+// //         promises.push(loadImage(i));
+// //       }
+// //       await Promise.all(promises);
+// //       setImagesLoaded(true); // Set state to true once all images are loaded
+// //       console.log("All banner images have been preloaded!");
+// //     };
 
-//     loadAllImages();
-//   }, []); // Run this effect only once on component mount
+// //     loadAllImages();
+// //   }, []); // Run this effect only once on component mount
 
-//   // Effect to handle the animation interval, but only if images are loaded
-//   useEffect(() => {
-//     if (isHovering && imagesLoaded) {
-//       intervalRef.current = setInterval(() => {
-//         setCurrentImageIndex((prevIndex) => (prevIndex % totalImages) + 1);
-//       }, 200);
-//     } else {
-//       clearInterval(intervalRef.current);
-//     }
+// //   // Effect to handle the animation interval, but only if images are loaded
+// //   useEffect(() => {
+// //     if (isHovering && imagesLoaded) {
+// //       intervalRef.current = setInterval(() => {
+// //         setCurrentImageIndex((prevIndex) => (prevIndex % totalImages) + 1);
+// //       }, 200);
+// //     } else {
+// //       clearInterval(intervalRef.current);
+// //     }
 
-//     return () => clearInterval(intervalRef.current);
-//   }, [isHovering, imagesLoaded]); // Re-run effect when isHovering or imagesLoaded changes
+// //     return () => clearInterval(intervalRef.current);
+// //   }, [isHovering, imagesLoaded]); // Re-run effect when isHovering or imagesLoaded changes
 
-//   const handleMouseEnter = () => {
-//     setIsHovering(true);
-//   };
+// //   const handleMouseEnter = () => {
+// //     setIsHovering(true);
+// //   };
 
-//   const handleMouseLeave = () => {
-//     setIsHovering(false);
-//   };
+// //   const handleMouseLeave = () => {
+// //     setIsHovering(false);
+// //   };
 
-//   const paddedIndex = String(currentImageIndex).padStart(5, "0");
-//   const imageUrl = `/images/${paddedIndex}.png`;
+// //   const paddedIndex = String(currentImageIndex).padStart(5, "0");
+// //   const imageUrl = `/images/${paddedIndex}.png`;
 
-//   return (
-//     <div
-//       className="banner-container"
-//       onMouseEnter={handleMouseEnter}
-//       onMouseLeave={handleMouseLeave}
-//     >
-//       <div
-//         className="image-banner"
-//         style={{ backgroundImage: `url(${imageUrl})` }}
-//       ></div>
-//     </div>
-//   );
-// };
+// //   return (
+// //     <div
+// //       className="banner-container"
+// //       onMouseEnter={handleMouseEnter}
+// //       onMouseLeave={handleMouseLeave}
+// //     >
+// //       <div
+// //         className="image-banner"
+// //         style={{ backgroundImage: `url(${imageUrl})` }}
+// //       ></div>
+// //     </div>
+// //   );
+// // };
 
-// export default ImageBanner;
+// // export default ImageBanner;
 
 
 // video
@@ -137,3 +137,5 @@ const ImageBanner = ({ videoSrc }) => {
 };
 
 export default ImageBanner;
+
+

@@ -1,61 +1,140 @@
-import React, { useState, useEffect, useRef } from 'react';
-import StoryComments from './StoryComments';
-import axios from 'axios';
-import AddComment from './AddComment';
+// import React, { useState, useEffect, useRef } from 'react';
+// import StoryComments from './StoryComments';
+// import axios from 'axios';
+// import AddComment from './AddComment';
 
-const CommentSidebar = ({ slug, sidebarShowStatus, setSidebarShowStatus, activeUser }) => {
+// const CommentSidebar = ({ slug, sidebarShowStatus, setSidebarShowStatus, activeUser }) => {
 
-  const [count, setCount] = useState(0)
-  const [commentlist, setCommentList] = useState([])
+//   const [count, setCount] = useState(0)
+//   const [commentlist, setCommentList] = useState([])
 
+//   const sidebarRef = useRef(null);
+
+//   useEffect(() => {
+//     getStoryComments()
+//   }, [setCommentList])
+
+
+//   const getStoryComments = async () => {
+//     try {
+//       const { data } = await axios.get(`/comment/${slug}/getAllComment`)
+//       setCommentList(data.data)
+//       setCount(data.count)
+//     }
+//     catch (error) {
+//       console.log(error.response.data.error);
+//     }
+//   }
+
+//   useEffect(() => {
+//     const checkIfClickedOutside = e => {
+
+//       if (sidebarShowStatus && sidebarRef.current && !sidebarRef.current.contains(e.target)) {
+//         setSidebarShowStatus(false)
+//       }
+//     }
+//     document.addEventListener("mousedown", checkIfClickedOutside)
+//     return () => {
+//       // Cleanup the event listener
+//       document.removeEventListener("mousedown", checkIfClickedOutside)
+//     }
+//   }, [sidebarShowStatus])
+
+
+
+//   return (
+
+//     <div ref={sidebarRef} className={sidebarShowStatus ? "Inclusive-comment-sidebar visible" : "Inclusive-comment-sidebar hidden "}  >
+
+//       <div className='sidebar-wrapper'>
+
+//         <AddComment setSidebarShowStatus={setSidebarShowStatus} slug={slug} getStoryComments={getStoryComments} activeUser={activeUser} count={count} />
+
+//         <StoryComments commentlist={commentlist} activeUser={activeUser} count={count} />
+//       </div>
+
+//     </div>
+
+//   )
+// }
+
+// export default CommentSidebar;
+
+
+
+
+import React, { useState, useEffect, useRef } from "react";
+import StoryComments from "./StoryComments";
+import axios from "axios";
+import AddComment from "./AddComment";
+
+const CommentSidebar = ({
+  slug,
+  sidebarShowStatus,
+  setSidebarShowStatus,
+  activeUser,
+}) => {
+  const [count, setCount] = useState(0);
+  const [commentlist, setCommentList] = useState([]);
   const sidebarRef = useRef(null);
 
   useEffect(() => {
-    getStoryComments()
-  }, [setCommentList])
-
+    getStoryComments();
+  }, [slug]); // fetch when slug changes
 
   const getStoryComments = async () => {
     try {
-      const { data } = await axios.get(`/comment/${slug}/getAllComment`)
-      setCommentList(data.data)
-      setCount(data.count)
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/comment/${slug}/getAllComment`
+      );
+      setCommentList(data.data);
+      setCount(data.count);
+    } catch (err) {
+      console.log(err.response?.data?.error || "Something went wrong");
     }
-    catch (error) {
-      console.log(error.response.data.error);
-    }
-  }
+  };
 
   useEffect(() => {
-    const checkIfClickedOutside = e => {
-
-      if (sidebarShowStatus && sidebarRef.current && !sidebarRef.current.contains(e.target)) {
-        setSidebarShowStatus(false)
+    const checkIfClickedOutside = (e) => {
+      if (
+        sidebarShowStatus &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(e.target)
+      ) {
+        setSidebarShowStatus(false);
       }
-    }
-    document.addEventListener("mousedown", checkIfClickedOutside)
+    };
+    document.addEventListener("mousedown", checkIfClickedOutside);
     return () => {
-      // Cleanup the event listener
-      document.removeEventListener("mousedown", checkIfClickedOutside)
-    }
-  }, [sidebarShowStatus])
-
-
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [sidebarShowStatus, setSidebarShowStatus]);
 
   return (
-
-    <div ref={sidebarRef} className={sidebarShowStatus ? "Inclusive-comment-sidebar visible" : "Inclusive-comment-sidebar hidden "}  >
-
-      <div className='sidebar-wrapper'>
-
-        <AddComment setSidebarShowStatus={setSidebarShowStatus} slug={slug} getStoryComments={getStoryComments} activeUser={activeUser} count={count} />
-
-        <StoryComments commentlist={commentlist} activeUser={activeUser} count={count} />
+    <div
+      ref={sidebarRef}
+      className={
+        sidebarShowStatus
+          ? "Inclusive-comment-sidebar visible"
+          : "Inclusive-comment-sidebar hidden"
+      }
+    >
+      <div className="sidebar-wrapper">
+        <AddComment
+          setSidebarShowStatus={setSidebarShowStatus}
+          slug={slug}
+          getStoryComments={getStoryComments}
+          activeUser={activeUser}
+          count={count}
+        />
+        <StoryComments
+          commentlist={commentlist}
+          activeUser={activeUser}
+          count={count}
+        />
       </div>
-
     </div>
-
-  )
-}
+  );
+};
 
 export default CommentSidebar;
