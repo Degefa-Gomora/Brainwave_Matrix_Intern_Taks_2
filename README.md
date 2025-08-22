@@ -6,6 +6,7 @@ E-Blog is a simple and intuitive web application for creating, sharing, and disc
 
 ## Features
 
+  * **Interactive Banner Video:** The homepage features a dynamic video banner that plays based on user mouse movement, creating an engaging and modern first impression.
   * **User Authentication:** Secure sign-up and log-in functionality for personalized user accounts.
   * **Create Posts:** Write and publish new blog posts with a title, content, and optional images.
   * **Read & Discover:** Browse a feed of recent blog posts from other users.
@@ -122,3 +123,4 @@ We welcome contributions\! If you'd like to improve the E-Blog app, please follo
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 -----
+
